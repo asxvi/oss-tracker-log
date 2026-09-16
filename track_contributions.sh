@@ -120,11 +120,15 @@ echo
 
 echo "Report written to $OUT_FILE" >> "$LOG_FILE"
 
-# Commit and push only if README.md actually changed (new, modified, or
-# staged) and this is a git repo with a remote configured.
+# Commit and push only if README.md actually changed, ignoring the
+# "Last updated" timestamp line, and this is a git repo with a remote
+# configured.
 if git -C "$OUT_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1 \
   && git -C "$OUT_DIR" remote get-url origin >/dev/null 2>&1; then
-  if [[ -n "$(git -C "$OUT_DIR" status --porcelain -- "$OUT_FILE")" ]]; then
+  OUT_FILE_NAME="$(basename "$OUT_FILE")"
+  OLD_CONTENT="$(git -C "$OUT_DIR" show "HEAD:$OUT_FILE_NAME" 2>/dev/null | grep -v '^_Last updated:')"
+  NEW_CONTENT="$(grep -v '^_Last updated:' "$OUT_FILE")"
+  if [[ "$OLD_CONTENT" != "$NEW_CONTENT" ]]; then
     {
       git -C "$OUT_DIR" add "$OUT_FILE"
       git -C "$OUT_DIR" commit -m "Update contributions report"
