@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- uses example in `launchd.plist` manpage -->
+
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.oss-tracker</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/ABSOLUTE/PATH/TO/oss-tracker-log/track_contributions.sh</string>
+    </array>
+    <!-- StartInterval is in seconds; 259200 = every 3 days -->
+    <key>StartInterval</key>
+    <integer>259200</integer>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>StandardOutPath</key>
+    <string>/ABSOLUTE/PATH/TO/oss-tracker-log/launchd.log</string>
+    <key>StandardErrorPath</key>
+    <string>/ABSOLUTE/PATH/TO/oss-tracker-log/launchd.log</string>
+</dict>
+</plist>
