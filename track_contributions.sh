@@ -26,6 +26,7 @@ if [[ -f "$REPOS_FILE" ]]; then
   while IFS= read -r line; do
     line="${line#"${line%%[![:space:]]*}"}"  # trim leading whitespace
     [[ -z "$line" || "$line" == \#* ]] && continue
+    line="${line#[-*+] }"  # strip a leading markdown bullet marker, if any
     repo=""
     if [[ "$line" =~ github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+) ]]; then
       repo="${BASH_REMATCH[1]}"
@@ -34,6 +35,9 @@ if [[ -f "$REPOS_FILE" ]]; then
     fi
     [[ -n "$repo" ]] && REPO_ARGS+=(--repo="${repo%.git}")
   done < "$REPOS_FILE"
+  if [[ ${#REPO_ARGS[@]} -eq 0 ]] && grep -qvE '^\s*(#|\s*$)' "$REPOS_FILE" 2>/dev/null; then
+    echo "WARNING: repos.md has content but no repos were parsed from it. Falling back to tracking all of GitHub, which is probably not what you want. Check repos.md formatting." >&2
+  fi
 fi
 
 # Fetch each category once as JSON. both the detail list and the aggregate
