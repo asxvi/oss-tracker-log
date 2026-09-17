@@ -1,6 +1,6 @@
 # OSS Contributions for asxvi
 
-_Last updated: 2026-09-16 09:12 CDT_
+_Last updated: 2026-09-17 11:58 CDT_
 
 _Scoped to repos listed in repos.md_
 
@@ -9,7 +9,7 @@ _Scoped to repos listed in repos.md_
 | Repo | Merged PRs | Open PRs | Closed PRs | Issues Opened | Issues Commented | Total |
 |---|---|---|---|---|---|---|
 | duckdb/duckdb | 3 | 5 | 2 | 3 | 10 | 23 |
-| facebookincubator/cinderx | 0 | 1 | 0 | 0 | 0 | 1 |
+| facebookincubator/cinderx | 0 | 0 | 1 | 0 | 0 | 1 |
 
 ## Merged Pull Requests
 
@@ -22,12 +22,12 @@ _Scoped to repos listed in repos.md_
 - [duckdb/duckdb] [Reject SET/DROP NOT NULL,SET DEFAULT,ALTER TYPE on nested struct fields](https://github.com/duckdb/duckdb/pull/25479)
 - [duckdb/duckdb] [Fix checkpoint corrupting -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25592)
 - [duckdb/duckdb] [Fix ORDER BY turning -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25540)
-- [facebookincubator/cinderx] [Fix AssertionError when a dynamic value is returned as a primitive int](https://github.com/facebookincubator/cinderx/pull/156)
 - [duckdb/duckdb] [fix crash casting a string to STRUCT with a VARIANT field](https://github.com/duckdb/duckdb/pull/25344)
 - [duckdb/duckdb] [Fix OOB vector access in PIVOT map() constant folding](https://github.com/duckdb/duckdb/pull/25341)
 
 ## Closed (Unmerged) Pull Requests
 
+- [facebookincubator/cinderx] [Fix AssertionError when a dynamic value is returned as a primitive int](https://github.com/facebookincubator/cinderx/pull/156)
 - [duckdb/duckdb] [Fix integer truncation in ArgMinMaxValueAssign::Assign](https://github.com/duckdb/duckdb/pull/25596)
 - [duckdb/duckdb] [Fix OOB vector access in map() PIVOT constant folding (#25276, #25278)](https://github.com/duckdb/duckdb/pull/25333)
 
@@ -39,8 +39,8 @@ _Scoped to repos listed in repos.md_
 
 ## Issues Participation (not opened by me)
 
+- [duckdb/duckdb] [Vuln184: Integer Truncation in `ArgMinMaxValueAssign::Assign` Leads to Heap Buffer Overflow with Large Strings](https://github.com/duckdb/duckdb/issues/25577) (closed)
 - [duckdb/duckdb] [Vuln45: Heap Buffer Overflow from uint32_t Blob-Offset Wraparound When Casting Large Rows to VARIANT](https://github.com/duckdb/duckdb/issues/25078) (closed)
-- [duckdb/duckdb] [Vuln184: Integer Truncation in `ArgMinMaxValueAssign::Assign` Leads to Heap Buffer Overflow with Large Strings](https://github.com/duckdb/duckdb/issues/25577) (open)
 - [duckdb/duckdb] [ORDER BY changes -0.0 to +0.0 for DOUBLE values](https://github.com/duckdb/duckdb/issues/25417) (open)
 - [duckdb/duckdb] [v2: wrong order of missing parameters in prepared statements](https://github.com/duckdb/duckdb/issues/25299) (closed)
 - [duckdb/duckdb] [Bug102: OOB Vector Access in PIVOT Backwards-Compat Serialization via Zero-Argument map()](https://github.com/duckdb/duckdb/issues/25279) (open)
