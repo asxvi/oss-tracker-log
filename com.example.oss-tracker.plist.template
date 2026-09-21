@@ -11,9 +11,31 @@
         <string>/bin/bash</string>
         <string>/ABSOLUTE/PATH/TO/oss-tracker-log/track_contributions.sh</string>
     </array>
-    <!-- StartInterval is in seconds; 259200 = every 3 days -->
-    <key>StartInterval</key>
-    <integer>259200</integer>
+    <!-- launchd hands the job a bare PATH of /usr/bin:/bin:/usr/sbin:/sbin,
+         which does not include Homebrew. Without this, `gh` is not found and
+         the script dies on its first command under `set -e`. Adjust the
+         Homebrew prefix if you are on Intel (/usr/local/bin). -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+    <!-- Runs Mondays and Thursdays at 09:00. StartInterval (seconds) works
+         too, but its clock restarts whenever the job is loaded, so the run
+         time drifts. -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key><integer>1</integer>
+            <key>Hour</key><integer>9</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>4</integer>
+            <key>Hour</key><integer>9</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+    </array>
     <key>RunAtLoad</key>
     <false/>
     <key>StandardOutPath</key>

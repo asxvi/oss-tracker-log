@@ -39,7 +39,16 @@ everything.
 
 ## Running it on a schedule (macOS)
 
-macOS deprecated `cron` in favor of `launchd`. To run this every 3 days:
+macOS deprecated `cron` in favor of `launchd`. The template runs this on
+Mondays and Thursdays at 09:00.
+
+**Where this directory lives matters.** A `launchd` agent is not covered by
+the privacy permissions your terminal has, so it cannot read `~/Desktop`,
+`~/Documents`, `~/Downloads`, or iCloud Drive. If this directory sits in one
+of those, every run fails with `Operation not permitted` (exit code 126)
+before the script executes a single line. Keep it somewhere unprotected such
+as `~/Scripts`. You can symlink it back onto your Desktop if you want it
+visible there; `launchd` follows the real path and stays out of TCC's way.
 
 1. Copy the template and fill in your actual paths:
    ```bash
@@ -52,10 +61,16 @@ macOS deprecated `cron` in favor of `launchd`. To run this every 3 days:
    ```bash
    launchctl load ~/Library/LaunchAgents/com.yourname.oss-tracker.plist
    ```
-4. Check it's running:
+4. Verify it actually works. `launchctl list | grep oss-tracker` only proves
+   the job is *loaded*, not that it runs, so trigger one now and read the
+   exit code:
    ```bash
-   launchctl list | grep oss-tracker
+   launchctl start com.yourname.oss-tracker
+   launchctl print gui/$(id -u)/com.yourname.oss-tracker | grep 'last exit code'
    ```
+   `0` means success. `126` is the privacy-permission problem described
+   above. Anything else: check `launchd.log`, which captures the run's
+   stdout and stderr and should be empty on a healthy run.
 
 Note: this only fires while your Mac is awake. If it's asleep or off at the
 scheduled time, `launchd` generally runs the job on next wake instead of
