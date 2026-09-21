@@ -1,6 +1,6 @@
 # OSS Contributions for asxvi
 
-_Last updated: 2026-09-17 14:15 CDT_
+_Last updated: 2026-09-21 17:57 CDT_
 
 _Scoped to repos listed in repos.md_
 
@@ -20,9 +20,9 @@ _Scoped to repos listed in repos.md_
 
 ## Open Pull Requests
 
+- [duckdb/duckdb] [Fix checkpoint corrupting -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25592)
 - [facebook/rocksdb] [Validate CuckooTableReader table geometry against file size](https://github.com/facebook/rocksdb/pull/15233)
 - [duckdb/duckdb] [Reject SET/DROP NOT NULL,SET DEFAULT,ALTER TYPE on nested struct fields](https://github.com/duckdb/duckdb/pull/25479)
-- [duckdb/duckdb] [Fix checkpoint corrupting -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25592)
 - [duckdb/duckdb] [Fix ORDER BY turning -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25540)
 - [duckdb/duckdb] [fix crash casting a string to STRUCT with a VARIANT field](https://github.com/duckdb/duckdb/pull/25344)
 - [duckdb/duckdb] [Fix OOB vector access in PIVOT map() constant folding](https://github.com/duckdb/duckdb/pull/25341)
