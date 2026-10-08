@@ -1,6 +1,6 @@
 # OSS Contributions for asxvi
 
-_Last updated: 2026-10-05 09:00 CDT_
+_Last updated: 2026-10-08 09:00 CDT_
 
 _Scoped to repos listed in repos.md_
 
@@ -8,12 +8,13 @@ _Scoped to repos listed in repos.md_
 
 | Repo | Merged PRs | Open PRs | Closed PRs | Issues Opened | Issues Commented | Total |
 |---|---|---|---|---|---|---|
-| duckdb/duckdb | 5 | 6 | 3 | 3 | 13 | 30 |
+| duckdb/duckdb | 6 | 4 | 4 | 3 | 13 | 30 |
 | facebook/rocksdb | 0 | 1 | 0 | 0 | 2 | 3 |
 | facebookincubator/cinderx | 0 | 0 | 1 | 0 | 0 | 1 |
 
 ## Merged Pull Requests
 
+- [duckdb/duckdb] [Fix checkpoint corrupting -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25592)
 - [duckdb/duckdb] [Reject SET/DROP NOT NULL,SET DEFAULT,ALTER TYPE on nested struct fields](https://github.com/duckdb/duckdb/pull/25479)
 - [duckdb/duckdb] [Fix off by one power of ten overflow in IntegerDecimalCastOperation](https://github.com/duckdb/duckdb/pull/26237)
 - [duckdb/duckdb] [Fix uint32_t blob offset overflow when casting oversized rows to VARIANT](https://github.com/duckdb/duckdb/pull/25181)
@@ -22,16 +23,15 @@ _Scoped to repos listed in repos.md_
 
 ## Open Pull Requests
 
-- [duckdb/duckdb] [fix crash casting a string to STRUCT with a VARIANT field](https://github.com/duckdb/duckdb/pull/25344)
-- [duckdb/duckdb] [Fix checkpoint corrupting -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25592)
-- [duckdb/duckdb] [Fix integer string cast with long fractional zero runs](https://github.com/duckdb/duckdb/pull/26340)
 - [duckdb/duckdb] [fix information_schema.check_constraints source query](https://github.com/duckdb/duckdb/pull/26357)
+- [duckdb/duckdb] [Fix ORDER BY turning -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25540)
+- [duckdb/duckdb] [Fix integer string cast with long fractional zero runs](https://github.com/duckdb/duckdb/pull/26340)
 - [duckdb/duckdb] [Fix/2619-Sequence nextval Skips Minimum Value at INT64_MIN Boundary](https://github.com/duckdb/duckdb/pull/26273)
 - [facebook/rocksdb] [Validate CuckooTableReader table geometry against file size](https://github.com/facebook/rocksdb/pull/15233)
-- [duckdb/duckdb] [Fix ORDER BY turning -0.0 into 0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/pull/25540)
 
 ## Closed (Unmerged) Pull Requests
 
+- [duckdb/duckdb] [fix crash casting a string to STRUCT with a VARIANT field](https://github.com/duckdb/duckdb/pull/25344)
 - [duckdb/duckdb] [Fix OOB vector access in PIVOT map() constant folding](https://github.com/duckdb/duckdb/pull/25341)
 - [facebookincubator/cinderx] [Fix AssertionError when a dynamic value is returned as a primitive int](https://github.com/facebookincubator/cinderx/pull/156)
 - [duckdb/duckdb] [Fix integer truncation in ArgMinMaxValueAssign::Assign](https://github.com/duckdb/duckdb/pull/25596)
@@ -39,7 +39,7 @@ _Scoped to repos listed in repos.md_
 
 ## Issues Opened
 
-- [duckdb/duckdb] [CHECKPOINT turns +0.0 into -0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/issues/25580) (open)
+- [duckdb/duckdb] [CHECKPOINT turns +0.0 into -0.0 for FLOAT/DOUBLE columns](https://github.com/duckdb/duckdb/issues/25580) (closed)
 - [duckdb/duckdb] [D_ASSERT in ExpressionBinder::BindInEnclosingScope uses a variable declared only under #ifdef DEBUG](https://github.com/duckdb/duckdb/issues/25345) (closed)
 - [duckdb/duckdb] [Constant-folding a literal cast to VARIANT that overflows silently returns a wrong result instead of erroring](https://github.com/duckdb/duckdb/issues/25231) (open)
 
