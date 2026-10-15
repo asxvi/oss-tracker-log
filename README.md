@@ -1,6 +1,6 @@
 # OSS Contributions for asxvi
 
-_Last updated: 2026-10-12 09:19 CDT_
+_Last updated: 2026-10-15 09:00 CDT_
 
 _Scoped to repos listed in repos.md_
 
@@ -8,7 +8,7 @@ _Scoped to repos listed in repos.md_
 
 | Repo | Merged PRs | Open PRs | Closed PRs | Issues Opened | Issues Commented | Total |
 |---|---|---|---|---|---|---|
-| duckdb/duckdb | 7 | 3 | 4 | 3 | 13 | 30 |
+| duckdb/duckdb | 7 | 2 | 5 | 3 | 13 | 30 |
 | facebook/rocksdb | 0 | 1 | 0 | 0 | 2 | 3 |
 | facebookincubator/cinderx | 0 | 0 | 1 | 0 | 0 | 1 |
 
@@ -24,13 +24,13 @@ _Scoped to repos listed in repos.md_
 
 ## Open Pull Requests
 
-- [duckdb/duckdb] [fix information_schema.check_constraints source query](https://github.com/duckdb/duckdb/pull/26357)
-- [duckdb/duckdb] [Fix integer string cast with long fractional zero runs](https://github.com/duckdb/duckdb/pull/26340)
 - [duckdb/duckdb] [Fix/2619-Sequence nextval Skips Minimum Value at INT64_MIN Boundary](https://github.com/duckdb/duckdb/pull/26273)
+- [duckdb/duckdb] [fix information_schema.check_constraints source query](https://github.com/duckdb/duckdb/pull/26357)
 - [facebook/rocksdb] [Validate CuckooTableReader table geometry against file size](https://github.com/facebook/rocksdb/pull/15233)
 
 ## Closed (Unmerged) Pull Requests
 
+- [duckdb/duckdb] [Fix integer string cast with long fractional zero runs](https://github.com/duckdb/duckdb/pull/26340)
 - [duckdb/duckdb] [fix crash casting a string to STRUCT with a VARIANT field](https://github.com/duckdb/duckdb/pull/25344)
 - [duckdb/duckdb] [Fix OOB vector access in PIVOT map() constant folding](https://github.com/duckdb/duckdb/pull/25341)
 - [facebookincubator/cinderx] [Fix AssertionError when a dynamic value is returned as a primitive int](https://github.com/facebookincubator/cinderx/pull/156)
